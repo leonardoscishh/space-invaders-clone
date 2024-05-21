@@ -189,3 +189,14 @@ function gameLoop() {
 
 createEnemies();
 gameLoop();
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
+const shootBtn = document.getElementById('shootBtn');
+
+leftBtn.addEventListener('touchstart', () => { player.dx = -player.speed; });
+rightBtn.addEventListener('touchstart', () => { player.dx = player.speed; });
+shootBtn.addEventListener('touchstart', shootBullet);
+
+leftBtn.addEventListener('touchend', () => { player.dx = 0; });
+rightBtn.addEventListener('touchend', () => { player.dx = 0; });
+
